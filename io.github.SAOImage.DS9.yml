@@ -1,4 +1,4 @@
-app-id: com.github.SAOImage.DS9
+app-id: io.github.SAOImage.DS9
 runtime: org.freedesktop.Platform
 runtime-version: '24.08'
 sdk: org.freedesktop.Sdk
@@ -15,15 +15,15 @@ modules:
       - make
       - install -m 755 -D bin/ds9 /app/bin/ds9
       - ls -R /app
-      - install -Dm644 com.github.SAOImage.DS9.desktop /app/share/applications/com.github.SAOImage.DS9.desktop
-      - install -Dm644 com.github.SAOImage.DS9.png /app/share/icons/hicolor/256x256/apps/com.github.SAOImage.DS9.png
+      - install -Dm644 io.github.SAOImage.DS9.desktop /app/share/applications/io.github.SAOImage.DS9.desktop
+      - install -Dm644 io.github.SAOImage.DS9.png /app/share/icons/hicolor/256x256/apps/io.github.SAOImage.DS9.png
     sources:
       - type: git
         url: https://github.com/SAOImageDS9/SAOImageDS9.git
       - type: file
-        path: com.github.SAOImage.DS9.desktop
+        path: io.github.SAOImage.DS9.desktop
       - type: file
-        path: com.github.SAOImage.DS9.png
+        path: io.github.SAOImage.DS9.png
 finish-args:
   - --share=ipc
   - --socket=x11
