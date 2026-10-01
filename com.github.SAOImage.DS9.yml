@@ -1,4 +1,4 @@
-app-id: com.github.SAOImageDS9.SAOImageDS9
+app-id: com.github.SAOImage.DS9
 runtime: org.freedesktop.Platform
 runtime-version: '24.08'
 sdk: org.freedesktop.Sdk
