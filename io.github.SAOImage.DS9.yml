@@ -8,6 +8,8 @@ modules:
     build-options:
       env:
         CFLAGS: -O2 -std=gnu17 -Wno-error=implicit-function-declaration -Wno-error=incompatible-pointer-types -Wno-error=int-conversion # Avoid issues with GCC introduced with runtime 24.08
+        LIBS: -lcups
+        LDFLAGS: -lcups
     buildsystem: simple
     build-commands:
       - sed -i 's/tclsh/$(TCLSH_PROG)/' ds9/make.include  # See: https://github.com/SAOImageDS9/SAOImageDS9/issues/134
