@@ -5,6 +5,9 @@ sdk: org.freedesktop.Sdk
 command: ds9
 modules:
   - name: ds9
+    build-options:
+      env:
+        CFLAGS: -O2 -std=gnu17 -Wno-error=implicit-function-declaration -Wno-error=incompatible-pointer-types -Wno-error=int-conversion
     buildsystem: simple
     build-commands:
       - sed -i 's/tclsh/$(TCLSH_PROG)/' ds9/make.include  # See: https://github.com/SAOImageDS9/SAOImageDS9/issues/134
