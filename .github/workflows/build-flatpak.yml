@@ -3,13 +3,13 @@ name: Build Flatpak
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 3 * * 1"   # every Monday at 03:00 UTC
+    - cron: "0 3 * * 1"
 
 jobs:
   flatpak:
     runs-on: ubuntu-latest
     container:
-      image: ghcr.io/flathub-infra/flatpak-github-actions:freedesktop-24.08
+      image: ghcr.io/flathub-infra/flatpak-github-actions:freedesktop-26.08
       options: --privileged
     steps:
       - uses: actions/checkout@v4
@@ -20,7 +20,6 @@ jobs:
           manifest-path: io.github.SAOImage.DS9.yml
           cache-key: flatpak-builder-${{ github.sha }}
 
-      # Only on tags: attach the bundle to a GitHub release
       - name: Release
         if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
         uses: softprops/action-gh-release@v2
