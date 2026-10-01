@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Name=SAOImage DS9
+GenericName=FITS Viewer
+Comment=Astronomical imaging and data visualization
+Exec=ds9 %F
+Icon=io.github.YOURUSERNAME.Stelvidilo
+Terminal=false
+Categories=Science;Astronomy;Education;
+MimeType=image/fits;application/fits;
+StartupWMClass=ds9
