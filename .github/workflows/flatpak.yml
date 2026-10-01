@@ -19,7 +19,7 @@ jobs:
       - uses: flatpak/flatpak-github-actions/flatpak-builder@v6
         with:
           bundle: ds9.flatpak
-          manifest-path: com.github.SAOImageDS9.SAOImageDS9.yml
+          manifest-path: com.github.SAOImage.DS9.yml
           cache-key: flatpak-builder-${{ github.sha }}
 
       # Only on tags: attach the bundle to a GitHub release
