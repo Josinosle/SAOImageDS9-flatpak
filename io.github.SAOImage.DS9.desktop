@@ -1,6 +1,6 @@
 [Desktop Entry]
 Type=Application
-Name=SAOImage DS9
+Name=DS9
 GenericName=FITS Viewer
 Comment=Astronomical imaging and data visualization
 Exec=ds9 %F
