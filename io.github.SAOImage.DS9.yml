@@ -20,7 +20,7 @@ modules:
       - install -Dm644 LICENSE -t ${FLATPAK_DEST}/share/licenses/com.github.SAOImage.DS9
       - install -Dm644 io.github.SAOImage.DS9.desktop ${FLATPAK_DEST}/share/applications/io.github.SAOImage.DS9.desktop
       - install -Dm644 io.github.SAOImage.DS9.png ${FLATPAK_DEST}/share/icons/hicolor/256x256/apps/io.github.SAOImage.DS9.png
-      - install -Dm644 io.github.SAOImage.DS9.metainfo ${FLATPAK_DEST}/share/metainfo/io.github.SAOImage.DS9.metainfo.xml
+      - install -Dm644 io.github.SAOImage.DS9.metainfo.xml ${FLATPAK_DEST}/share/metainfo/io.github.SAOImage.DS9.metainfo.xml
     sources:
       - type: git
         url: https://github.com/SAOImageDS9/SAOImageDS9.git
@@ -28,6 +28,8 @@ modules:
         path: io.github.SAOImage.DS9.desktop
       - type: file
         path: io.github.SAOImage.DS9.png
+      - type: file
+        path: io.github.SAOImage.DS9.metadata.xml
 finish-args:
   - --share=ipc
   - --socket=x11
