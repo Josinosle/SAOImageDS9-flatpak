@@ -7,19 +7,20 @@ modules:
   - name: ds9
     build-options:
       env:
-        CFLAGS: -O2 -std=gnu17 -Wno-error=implicit-function-declaration -Wno-error=incompatible-pointer-types -Wno-error=int-conversion # Avoid issues with GCC introduced with runtime 24.08
-        LIBS: -lcups
-        LDFLAGS: -lcups
+        CFLAGS: -O2  # Avoid issues with GCC introduced with runtime 24.08
+        CXXFLAGS: -O2
     buildsystem: simple
     build-commands:
-      - sed -i 's/tclsh/$(TCLSH_PROG)/' ds9/make.include  # See: https://github.com/SAOImageDS9/SAOImageDS9/issues/134
-      - ./unix/configure
+      - TKFLAGS=--disable-libcups ./unix/configure --with-arch=flatpak
+      - make tcl9.0/unix/Makefile
+      - make -C tcl9.0/unix -j${FLATPAK_BUILDER_N_JOBS} binaries
       - make
-      - install -m 755 -D bin/ds9 /app/bin/ds9
+      - install -m 755 -D bin/ds9 ${FLATPAK_DEST}/bin/ds9
       - ls -R /app
-      - install -Dm644 LICENSE -t /app/share/licenses/com.github.SAOImage.DS9
-      - install -Dm644 io.github.SAOImage.DS9.desktop /app/share/applications/io.github.SAOImage.DS9.desktop
-      - install -Dm644 io.github.SAOImage.DS9.png /app/share/icons/hicolor/256x256/apps/io.github.SAOImage.DS9.png
+      - install -Dm644 LICENSE -t ${FLATPAK_DEST}/share/licenses/com.github.SAOImage.DS9
+      - install -Dm644 io.github.SAOImage.DS9.desktop ${FLATPAK_DEST}/share/applications/io.github.SAOImage.DS9.desktop
+      - install -Dm644 io.github.SAOImage.DS9.png ${FLATPAK_DEST}/share/icons/hicolor/256x256/apps/io.github.SAOImage.DS9.png
+      - install -Dm644 io.github.SAOImage.DS9.metainfo ${FLATPAK_DEST}/share/metainfo/io.github.SAOImage.DS9.metainfo.xml
     sources:
       - type: git
         url: https://github.com/SAOImageDS9/SAOImageDS9.git
@@ -31,3 +32,4 @@ finish-args:
   - --share=ipc
   - --socket=x11
   - --filesystem=home
+  - --share=network
