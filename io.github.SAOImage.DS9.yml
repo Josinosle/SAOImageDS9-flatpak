@@ -29,7 +29,7 @@ modules:
       - type: file
         path: io.github.SAOImage.DS9.png
       - type: file
-        path: io.github.SAOImage.DS9.metadata.xml
+        path: io.github.SAOImage.DS9.metainfo.xml
 finish-args:
   - --share=ipc
   - --socket=x11
