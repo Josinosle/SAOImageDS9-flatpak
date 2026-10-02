@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component type="desktop-application"> 
-  <id>edu.si.ds9</id>   
+  <id>io.github.SAOImage.DS9</id>   
   <metadata_license>CC0-1.0</metadata_license>   
   <project_license>GPL-3.0-only</project_license>   
   <name>SAOImageDS9</name>   
@@ -9,10 +9,10 @@
     <p>SAOImageDS9 displays and analyzes astronomical images, FITS binary tables, data cubes, and regions.</p>   
     <p>It supports multiple frames, mosaics, scaling and colormap algorithms, coordinate systems, catalogs, SIA, SAMP, and XPA.</p>   
   </description>   
-  <launchable type="desktop-id">edu.si.ds9.desktop</launchable>   
+  <launchable type="desktop-id">io.github.SAOImage.DS9.desktop</launchable>   
   <provides><binary>ds9</binary></provides>   
   <url type="homepage">https://ds9.si.edu/</url>   
   <url type="bugtracker">https://github.com/SAOImageDS9/SAOImageDS9/issues</url>   
   <content_rating type="oars-1.1"/>   
-  <releases><release version="8.8" date="2026-09-30"/></releases>   
+  <releases><release version="8.8" date="2026-10-02"/></releases>   
 </component>   
